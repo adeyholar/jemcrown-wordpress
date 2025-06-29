@@ -1,1 +1,16 @@
-# jemcrown-wordpress
+## Step 2.2: Configure WordPress (Additional Update)
+- **Status**: Updated site to use `localhost` (June 24, 2025).
+- **Setup**:
+  - Updated `/etc/hosts`: Added `127.0.0.1 localhost jemcrownfoundation.org`.
+  - Updated `wp-config.php`: Set `WP_HOME` and `WP_SITEURL` to `http://localhost`.
+  - Updated database: Set `wpc6_options` (`siteurl`, `home`) to `http://localhost`.
+  - Updated Apache: Set `ServerName localhost` in `000-default.conf`.
+  - Verified access: `http://localhost` and `http://localhost/wp-admin`.
+- **Run**:
+  - Start Apache: `sudo systemctl start apache2`.
+  - Start MySQL: `sudo systemctl start mysql`.
+  - Access site: `http://localhost`.
+  - Access admin: `http://localhost/wp-admin` (login: admin, password: P@55w0rd*321).
+- **Troubleshooting**:
+  - Ensured `127.0.0.1 localhost` in `/etc/hosts`.
+  - Verified `mod_rewrite` and PHP 8.1 enabled.

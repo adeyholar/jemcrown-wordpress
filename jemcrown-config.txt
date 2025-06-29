@@ -1,0 +1,13 @@
+<pre>root@NGOPrototype:/home/jemcrownadmin# cat /etc/apache2/sites-available/jemcrown.conf 
+&lt;VirtualHost *:80&gt;
+    ServerName localhost
+    ServerAlias 192.168.1.242
+    DocumentRoot /var/www/html/jemcrown
+    &lt;Directory /var/www/html/jemcrown&gt;
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+    ErrorLog ${APACHE_LOG_DIR}/jemcrown-error.log
+    CustomLog ${APACHE_LOG_DIR}/jemcrown-access.log combined
+&lt;/VirtualHost&gt;
+root@NGOPrototype:/home/jemcrownadmin# </pre>

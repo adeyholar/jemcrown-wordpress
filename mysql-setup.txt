@@ -1,0 +1,23 @@
+## Step 2.2: Configure WordPress
+- **Status**: Redirection, empty page, 404 error, PHP rendering, MySQL issues, and admin access resolved (June 23, 2025).
+- **Setup**:
+  - Extracted `jemcrown_files.tar` to `/var/www/html/jemcrown`.
+  - Used `jcrownsys` database (corrected from `jcrownsys_wp735`).
+  - Updated `wp-config.php`: Set `DB_NAME` to `jcrownsys`, verified `DB_USER` and `DB_PASSWORD`.
+  - Updated Apache: Set `DocumentRoot /var/www/html/jemcrown` in `000-default.conf`.
+  - Enabled modules: `sudo a2enmod rewrite php8.1`.
+  - Tested PHP: `test.php` rendered PHP info.
+  - Fixed MySQL: Granted privileges to `jcrownsys_user@localhost` for `jcrownsys`.
+  - Reset admin password: Updated `wpc6_users` with MD5('P@55w0rd*321').
+  - Set `.htaccess` for rewrites.
+  - Permissions: `sudo chmod -R 755 /var/www/html/jemcrown && sudo chown -R www-data:www-data /var/www/html/jemcrown`.
+- **Run**:
+  - Start Apache: `sudo systemctl start apache2`.
+  - Start MySQL: `sudo systemctl start mysql`.
+  - Access site: `http://192.168.1.242`.
+  - Access admin: `http://192.168.1.242/wp-admin` (login: admin, password: P@55w0rd*321).
+- **Troubleshooting**:
+  - Redirection: Updated `wpc6_options` (`siteurl`, `home`) to `http://192.168.1.242`.
+  - Empty page: Enabled PHP 8.1 module.
+  - 404 error: Set correct `DocumentRoot` and enabled `mod_rewrite`.
+  - MySQL: Corrected `DB_NAME` to `jcrownsys` in `wp-config.php`.

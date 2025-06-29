@@ -1,0 +1,6 @@
+root@NGOPrototype:/home/jemcrownadmin# sudo a2enmod php8.1
+Considering dependency mpm_prefork for php8.1:
+Considering conflict mpm_event for mpm_prefork:
+ERROR: Module mpm_event is enabled - cannot proceed due to conflicts. It needs to be disabled first!
+Considering conflict mpm_worker for mpm_prefork:
+ERROR: Could not enable dependency mpm_prefork for php8.1, aborting

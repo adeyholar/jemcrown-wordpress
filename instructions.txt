@@ -1,0 +1,18 @@
+reset admin password
+
+USE jcrownsys;
+UPDATE wpc6_users SET user_pass = MD5('P@55w0rd*321') WHERE user_login = 'steven.admin';
+
+verify
+
+SELECT user_login, user_pass FROM wpc6_users WHERE user_login = 'steven.admin';
+
+admin does not exit finding the correc username
+
+SELECT user_login FROM wpc6_users;
+
+UPDATE wpc6_options SET option_value = 'http://localhost' WHERE option_name IN ('siteurl', 'home');
+
+SELECT option_name, option_value FROM wpc6_options WHERE option_name IN ('siteurl', 'home');
+
+<meta name="test" content="Fellowship Plugin Test">

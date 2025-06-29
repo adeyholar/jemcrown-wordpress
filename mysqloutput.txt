@@ -1,0 +1,138 @@
+root@NGOPrototype:/home/jemcrownadmin# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.42-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jcrownsys          |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> USE jcrownsys;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++---------------------------------------------------+
+| Tables_in_jcrownsys                               |
++---------------------------------------------------+
+| wpc6_actionscheduler_actions                      |
+| wpc6_actionscheduler_claims                       |
+| wpc6_actionscheduler_groups                       |
+| wpc6_actionscheduler_logs                         |
+| wpc6_addonlibrary_addons                          |
+| wpc6_addonlibrary_categories                      |
+| wpc6_aioseo_cache                                 |
+| wpc6_aioseo_crawl_cleanup_blocked_args            |
+| wpc6_aioseo_crawl_cleanup_logs                    |
+| wpc6_aioseo_notifications                         |
+| wpc6_aioseo_posts                                 |
+| wpc6_aioseo_writing_assistant_keywords            |
+| wpc6_aioseo_writing_assistant_posts               |
+| wpc6_betterdocs_analytics                         |
+| wpc6_betterdocs_search_keyword                    |
+| wpc6_betterdocs_search_log                        |
+| wpc6_betterlinkmeta                               |
+| wpc6_betterlinks                                  |
+| wpc6_betterlinks_clicks                           |
+| wpc6_betterlinks_terms                            |
+| wpc6_betterlinks_terms_relationships              |
+| wpc6_commentmeta                                  |
+| wpc6_comments                                     |
+| wpc6_e_events                                     |
+| wpc6_e_submissions                                |
+| wpc6_e_submissions_actions_log                    |
+| wpc6_e_submissions_values                         |
+| wpc6_give_commentmeta                             |
+| wpc6_give_comments                                |
+| wpc6_give_donationmeta                            |
+| wpc6_give_donormeta                               |
+| wpc6_give_donors                                  |
+| wpc6_give_formmeta                                |
+| wpc6_give_log                                     |
+| wpc6_give_migrations                              |
+| wpc6_give_revenue                                 |
+| wpc6_give_sequential_ordering                     |
+| wpc6_give_sessions                                |
+| wpc6_give_subscriptionmeta                        |
+| wpc6_give_subscriptions                           |
+| wpc6_links                                        |
+| wpc6_options                                      |
+| wpc6_postmeta                                     |
+| wpc6_posts                                        |
+| wpc6_term_relationships                           |
+| wpc6_term_taxonomy                                |
+| wpc6_termmeta                                     |
+| wpc6_terms                                        |
+| wpc6_userfeedback_survey_responses                |
+| wpc6_userfeedback_surveys                         |
+| wpc6_usermeta                                     |
+| wpc6_users                                        |
+| wpc6_wc_admin_note_actions                        |
+| wpc6_wc_admin_notes                               |
+| wpc6_wc_category_lookup                           |
+| wpc6_wc_customer_lookup                           |
+| wpc6_wc_download_log                              |
+| wpc6_wc_order_coupon_lookup                       |
+| wpc6_wc_order_product_lookup                      |
+| wpc6_wc_order_stats                               |
+| wpc6_wc_order_tax_lookup                          |
+| wpc6_wc_product_attributes_lookup                 |
+| wpc6_wc_product_download_directories              |
+| wpc6_wc_product_meta_lookup                       |
+| wpc6_wc_rate_limits                               |
+| wpc6_wc_reserved_stock                            |
+| wpc6_wc_tax_rate_classes                          |
+| wpc6_wc_webhooks                                  |
+| wpc6_woocommerce_api_keys                         |
+| wpc6_woocommerce_attribute_taxonomies             |
+| wpc6_woocommerce_downloadable_product_permissions |
+| wpc6_woocommerce_log                              |
+| wpc6_woocommerce_order_itemmeta                   |
+| wpc6_woocommerce_order_items                      |
+| wpc6_woocommerce_payment_tokenmeta                |
+| wpc6_woocommerce_payment_tokens                   |
+| wpc6_woocommerce_sessions                         |
+| wpc6_woocommerce_shipping_zone_locations          |
+| wpc6_woocommerce_shipping_zone_methods            |
+| wpc6_woocommerce_shipping_zones                   |
+| wpc6_woocommerce_tax_rate_locations               |
+| wpc6_woocommerce_tax_rates                        |
+| wpc6_wpforms_logs                                 |
+| wpc6_wpforms_payment_meta                         |
+| wpc6_wpforms_payments                             |
+| wpc6_wpforms_tasks_meta                           |
+| wpc6_wpmailsmtp_debug_events                      |
+| wpc6_wpmailsmtp_tasks_meta                        |
++---------------------------------------------------+
+88 rows in set (0.00 sec)
+
+mysql> SELECT user, host FROM mysql.user WHERE user = 'jcrownsys_user';
++----------------+-----------+
+| user           | host      |
++----------------+-----------+
+| jcrownsys_user | localhost |
++----------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> EXIT;
+Bye
+root@NGOPrototype:/home/jemcrownadmin# 
+
